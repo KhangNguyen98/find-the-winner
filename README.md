@@ -8,4 +8,6 @@
 
 <hr>
 
+Just a recommend: It should be opened by Visual studio code with live server to run.
+
 <p>This is my first project with Javascript, so it's just tiny project 🥺. But hoping u enjoy it 🥰</p>
