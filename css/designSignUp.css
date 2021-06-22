@@ -1,0 +1,12 @@
+a {
+  text-decoration: none;
+}
+
+div {
+  margin: 0 30%;
+}
+
+#txtScore:invalid + #checkScore::before {
+  content: "Max score is 100";
+  color: red;
+}

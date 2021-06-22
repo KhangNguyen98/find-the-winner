@@ -1,0 +1,11 @@
+span > h1 {
+  text-align: center;
+}
+
+.panelOptions {
+  margin: 0 40%;
+}
+
+div > a {
+  text-decoration: none;
+}
