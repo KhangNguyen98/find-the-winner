@@ -8,7 +8,7 @@
 
 <hr>
 
-I dont wannna talk to much. Just clone and explore ^^.
+This project lets user to sign up with name and score.Also it has some feature u can explore ^^.
 
 Just a recommendation: It should be opened by Visual studio code with live server to run.
 
