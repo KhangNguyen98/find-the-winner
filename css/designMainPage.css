@@ -9,3 +9,7 @@ span > h1 {
 div > a {
   text-decoration: none;
 }
+
+p {
+  text-align: center;
+}
