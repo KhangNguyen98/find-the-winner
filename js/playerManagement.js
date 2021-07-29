@@ -1,19 +1,6 @@
-//why sometime it get error??
-
-// import  {Player} from "./player.js";
-
 "use strict";
-
-//new way to import;
-// const Player = require("./player");
-
-
-//import { Player } from "player.js";
-// let mainPageWeb = "http://127.0.0.1:5500/mainPage/competition.html";
-
 const mainPageWeb = "../mainPage/competition.html";
 
-// const listPlayer = [];
 
 function addPlayer() {
    const txtName = document.getElementById("txtName");
