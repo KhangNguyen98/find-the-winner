@@ -1,15 +1,31 @@
-span > h1 {
-  text-align: center;
+body {
+  background-color: #185adb;
+  font-family: sans-serif;
 }
 
-.panelOptions {
-  margin: 0 40%;
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
-div > a {
+.tittle {
+  color: #f9f9f9;
+}
+
+.tittle:hover {
+  color: #f54748;
+}
+
+a:link {
   text-decoration: none;
 }
 
-p {
-  text-align: center;
+a:hover,
+a:active {
+  color: #4aa96c;
+}
+
+#result {
+  color: #ecd662;
 }

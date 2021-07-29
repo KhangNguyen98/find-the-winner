@@ -10,6 +10,7 @@
 
 //import { Player } from "player.js";
 // let mainPageWeb = "http://127.0.0.1:5500/mainPage/competition.html";
+
 const mainPageWeb = "../mainPage/competition.html";
 
 // const listPlayer = [];
@@ -22,9 +23,9 @@ function addPlayer() {
    }
    //  dont need cuz we have css:invalid work with this but cant work input type to show
    //  content message
-   if (!txtScore.checkValidity()) {
-      document.getElementById("checkScore").innerHTML = "Score must be 0-100";
-   }
+   // if (!txtScore.checkValidity()) {
+   //    document.getElementById("checkScore").innerHTML = "Score must be 0-100";
+   // }
    if (txtName.checkValidity() && txtScore.checkValidity()) {
       const nameValue = document.getElementById("txtName").value;
       const scoreValue = document.getElementById("txtScore").value;
@@ -34,30 +35,40 @@ function addPlayer() {
       players.push(new Player(nameValue, scoreValue));
       localStorage.setItem("players", JSON.stringify(players));
 
-
       // new discovery
       window.location.replace(mainPageWeb);
-
    }
 }
 
-function listPlayer() {
-   let players = localStorage.getItem("players");
+function reset() {
+   document.getElementById("result").innerHTML = "";
+}
+
+function showResult(request) {
+   const players = localStorage.getItem("players");
+   document.getElementById("result").innerHTML = "No available";
+   if (request === "showAll") {
+      listPlayer(players);
+      return;
+   }
+   findWinner(players);
+}
+
+function listPlayer(players) {
    if (players !== null && players.length > 0) {
+      reset();
       //we need to parse
       players = JSON.parse(players);
+      document.getElementById("result").innerHTML = `List of user:</br>`;
       players.forEach(
-         item => document.getElementById("players").innerHTML += `Name: ${item["name"]} Score: ${item["score"]} </br>`
-      );;
-   } else {
-      document.getElementById("players").innerHTML = "No available";
+         item => document.getElementById("result").innerHTML += `Name: ${item["name"]} Score: ${item["score"]} </br>`
+      );
    }
-   document.getElementById("winner").innerHTML = "";
 }
 
-function findWinner() {
-   let players = localStorage.getItem("players");
+function findWinner(players) {
    if (players !== null && players.length > 0) {
+      reset();
       players = JSON.parse(players);
       let name = players[0]["name"], score = players[0]["score"];
       for (let index = 1; index < players.length; index++) {
@@ -66,11 +77,9 @@ function findWinner() {
             score = players[index]["score"];
          }
       }
-      document.getElementById("winner").innerHTML = `Name:${name} Score:${score}`;
-   } else {
-      document.getElementById("winner").innerHTML = "No available";
+      document.getElementById("result").innerHTML = ` The winner is:
+      Name:${name} Score:${score}`;
    }
-   document.getElementById("players").innerHTML = "";
 }
 
 

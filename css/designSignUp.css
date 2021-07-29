@@ -1,12 +1,47 @@
-a {
-  text-decoration: none;
+body {
+  background-color: #cdf0ea;
+  color: #da0037;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  font-family: sans-serif;
 }
 
-div {
-  margin: 0 30%;
+.form {
+  align-self: center;
+  background-color: #f6c6ea;
+  z-index: 1;
+  width: 20rem;
+  padding: 2rem;
+  border: 2px black;
+  border-style: dashed;
+}
+
+a {
+  text-decoration: none;
+  background-color: #66de93;
+  color: red;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 1rem;
+  border: 1px black solid;
+}
+
+a:hover,
+a:active {
+  color: #66de93;
+  background-color: red;
 }
 
 #txtScore:invalid + #checkScore::before {
   content: "Max score is 100";
-  color: red;
+}
+
+#signUp {
+  background-color: #c84b31;
+  color: #ffeda3;
+  font-weight: bold;
+  border-style: none;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 1px 1px rgba(0.2, 0.3, 0.6, 0.6);
 }
