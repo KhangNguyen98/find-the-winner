@@ -5,16 +5,27 @@ body {
   flex-flow: column;
   align-items: flex-start;
   font-family: sans-serif;
+  height: 100vh;
 }
 
 .form {
+  margin-top: 5rem;
   align-self: center;
   background-color: #f6c6ea;
-  z-index: 1;
-  width: 20rem;
+  width: 18rem;
+  display: flex;
+  flex-flow: column nowrap;
+  border: 3px #c6ffc1;
+  border-spacing: 2px;
+  border-style: dotted;
   padding: 2rem;
-  border: 2px black;
-  border-style: dashed;
+  padding-right: 0px;
+  justify-content: center;
+}
+
+.form [type="text"],
+.form [type="number"] {
+  width: 8rem;
 }
 
 a {
@@ -23,8 +34,8 @@ a {
   color: red;
   font-weight: bold;
   border-radius: 50%;
-  padding: 1rem;
   border: 1px black solid;
+  padding: 0.5rem;
 }
 
 a:hover,
@@ -44,4 +55,5 @@ a:active {
   border-style: none;
   padding: 0.5rem;
   box-shadow: 1px 1px 1px 1px rgba(0.2, 0.3, 0.6, 0.6);
+  width: 8rem;
 }
